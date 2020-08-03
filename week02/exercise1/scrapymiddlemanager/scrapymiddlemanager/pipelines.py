@@ -15,6 +15,15 @@ DbInfo = {
     'password': 'geektime',
     'db': 'quotes'
 }
+'''
+quotes的建表语句
+CREATE TABLE `quotes` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `author` varchar(50) NOT NULL DEFAULT '',
+  `quotes` varchar(1024) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8mb4
+'''
 
 class DBConn(object):
     def __init__(self, DbInfo):
