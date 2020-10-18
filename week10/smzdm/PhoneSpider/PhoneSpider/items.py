@@ -4,9 +4,10 @@
 # https://docs.scrapy.org/en/latest/topics/items.html
 
 import scrapy
+from scrapy_djangoitem import DjangoItem
+from smzdm_phone import models
 
-
-class PhonespiderItem(scrapy.Item):
+class PhonespiderItem(DjangoItem):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    print("In item: ")
+    django_model = models.PhonespiderItem

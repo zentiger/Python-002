@@ -10,4 +10,6 @@ from itemadapter import ItemAdapter
 
 class PhonespiderPipeline:
     def process_item(self, item, spider):
+        print("In Pipeline: ")
+        item.save()
         return item

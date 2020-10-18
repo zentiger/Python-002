@@ -63,9 +63,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'PhoneSpider.pipelines.PhonespiderPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'PhoneSpider.pipelines.PhonespiderPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -87,3 +87,12 @@ ROBOTSTXT_OBEY = True
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+# 设置与django的合并
+import os
+import sys 
+sys.path.append(os.path.dirname(os.path.abspath('..')))
+os.environ['DJANGO_SETTINGS_MODULE'] = 'smzdm.settings'
+
+import django
+django.setup()
