@@ -11,6 +11,7 @@ def phone_comments(request):
     start_date = q.get('start_date')
     end_date = q.get('end_date')
     good = q.get('goods')
+    conditions = {}
     if good:
         conditions.update({'goods_title__icontains':good})
     if start_date:
