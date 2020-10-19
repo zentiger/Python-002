@@ -1,0 +1,16 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Phone Comments</title>
+</head>
+<body>
+
+{% for c in comments %}
+    <div>ID: {{ c.comment_id }}   <br>
+         Date: {{c.comment_date}} <br>
+         Title: {{c.goods_title}} <br> 
+         Description: {{c.comment_description}} <br>
+         Sentiments: {{c.comment_sentiments}} <br>
+    </div>
+{% endfor %}
+</body>
