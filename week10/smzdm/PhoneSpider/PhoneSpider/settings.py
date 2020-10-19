@@ -18,7 +18,7 @@ NEWSPIDER_MODULE = 'PhoneSpider.spiders'
 USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -90,7 +90,7 @@ ITEM_PIPELINES = {
 
 # 设置与django的合并
 import os
-import sys 
+import sys
 sys.path.append(os.path.dirname(os.path.abspath('..')))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'smzdm.settings'
 

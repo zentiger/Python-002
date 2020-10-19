@@ -12,7 +12,7 @@ class PhoneSpider(scrapy.Spider):
         phone_top10_comment = response.xpath("//ul[@id='feed-main-list']/li[@class='feed-row-wide']//a[@class='z-group-data']/@href")
         for url in phone_top10_comment.extract()[:10]:
             yield scrapy.Request(url,callback=self.comments_parse)
-        
+
     def next_page(self, url):
         print(url)
 
@@ -23,7 +23,7 @@ class PhoneSpider(scrapy.Spider):
         items = []
         comments = response.xpath('//ul[@class="comment_listBox"]/li[@class="comment_list"]')
         goods_title = response.xpath('//h1[@class="title J_title"]/text()').extract()[0].strip()
-        for comment in comments[0:3]:
+        for comment in comments:
             comment_id = comment.xpath('.//div[@class="comment_con"]/input/@comment-id').extract()[0]
             comment_date = comment.xpath('.//div[@class="time"]/meta/@content').extract()[0]
             comment_description = comment.xpath('.//span[@itemprop="description"]/text()').extract()[0]
